@@ -13,119 +13,145 @@
             font-family: 'Tajawal', sans-serif;
         }
         body {
-            background: linear-gradient(135deg, #0d1117, #161b22, #1f242d);
+            background: radial-gradient(circle at center, #1b2234 0%, #0d1117 100%);
             color: #c9d1d9;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow-x: hidden;
-            perspective: 1000px;
+            perspective: 1200px;
         }
         .container {
-            width: 90%;
-            max-width: 900px;
-            background: rgba(22, 27, 34, 0.85);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(88, 166, 255, 0.3);
-            padding: 50px;
-            border-radius: 20px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 
-                        0 0 30px rgba(0, 112, 243, 0.2);
+            width: 92%;
+            max-width: 950px;
+            background: rgba(22, 27, 34, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(88, 166, 255, 0.25);
+            padding: 50px 40px;
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
             transform-style: preserve-3d;
-            animation: floatCard 6s ease-in-out infinite;
+            animation: floatCard 7s ease-in-out infinite;
             text-align: center;
         }
         @keyframes floatCard {
-            0%, 100% { transform: translateY(0) rotateX(2deg) rotateY(-2deg); }
-            50% { transform: translateY(-10px) rotateX(-2deg) rotateY(2deg); }
+            0%, 100% { transform: translateY(0) rotateX(1deg) rotateY(-1deg); }
+            50% { transform: translateY(-8px) rotateX(-1deg) rotateY(1deg); }
+        }
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            color: #58a6ff;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
         }
         .icon-3d {
-            font-size: 65px;
-            margin-bottom: 20px;
-            text-shadow: 0 10px 20px rgba(0, 255, 128, 0.4);
-            animation: pulseIcon 2s infinite;
+            font-size: 70px;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 10px 15px rgba(0, 255, 128, 0.3));
+            animation: pulseIcon 2.5s infinite;
         }
         @keyframes pulseIcon {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            50% { transform: scale(1.08); }
         }
         h1 {
-            color: #58a6ff;
-            font-size: 38px;
-            margin-bottom: 15px;
+            color: #ffffff;
+            font-size: 36px;
+            margin-bottom: 12px;
             font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             text-shadow: 0 2px 10px rgba(88, 166, 255, 0.4);
         }
         .subtitle {
             color: #8b949e;
-            font-size: 18px;
-            margin-bottom: 30px;
+            font-size: 17px;
+            margin-bottom: 35px;
+            line-height: 1.6;
         }
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 25px;
             margin-bottom: 35px;
         }
         .info-card {
-            background: rgba(13, 17, 23, 0.6);
-            border: 1px solid #30363d;
-            padding: 25px;
-            border-radius: 12px;
-            transition: all 0.4s ease;
-            transform: translateZ(20px);
+            background: linear-gradient(145deg, rgba(13, 17, 23, 0.8), rgba(22, 27, 34, 0.9));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 30px 25px;
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transform: translateZ(25px);
             text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         .info-card:hover {
-            transform: translateZ(40px) translateY(-5px);
+            transform: translateZ(45px) translateY(-6px);
             border-color: #58a6ff;
-            box-shadow: 0 10px 20px rgba(88, 166, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(88, 166, 255, 0.2);
         }
         .info-card h3 {
             color: #3fb950;
-            font-size: 20px;
+            font-size: 21px;
             margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .info-card p {
+            color: #8b949e;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
         .card-btn {
             display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: #1f6feb;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #1f6feb, #388bfd);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 15px;
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
+            box-shadow: 0 4px 15px rgba(31, 111, 235, 0.3);
         }
         .card-btn:hover {
-            background: #388bfd;
-            box-shadow: 0 5px 15px rgba(56, 139, 253, 0.4);
+            background: linear-gradient(135deg, #388bfd, #58a6ff);
+            box-shadow: 0 6px 20px rgba(56, 139, 253, 0.5);
+            transform: scale(1.02);
         }
         .main-btn {
             display: inline-block;
-            padding: 14px 35px;
+            width: 100%;
+            max-width: 350px;
+            padding: 15px 30px;
             background: linear-gradient(135deg, #238636, #2ea043);
             color: white;
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 14px;
             font-weight: bold;
             font-size: 17px;
-            box-shadow: 0 8px 20px rgba(35, 134, 54, 0.4);
+            box-shadow: 0 10px 25px rgba(35, 134, 54, 0.4);
             transition: all 0.3s ease;
-            transform: translateZ(30px);
+            transform: translateZ(35px);
         }
         .main-btn:hover {
             background: linear-gradient(135deg, #2ea043, #3fb950);
-            transform: translateZ(50px) scale(1.05);
+            transform: translateZ(55px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(46, 160, 67, 0.6);
         }
         
-        /* Modal Popup Styles */
+        /* Modal Popup Design */
         .modal {
             display: none;
             position: fixed;
@@ -133,53 +159,60 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(8px);
+            background: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(12px);
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            padding: 20px;
         }
         .modal-content {
             background: #161b22;
-            border: 1px solid #30363d;
-            padding: 30px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 500px;
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            padding: 35px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 520px;
             text-align: right;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-            animation: scaleUp 0.3s ease;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+            animation: scaleUp 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         @keyframes scaleUp {
-            from { transform: scale(0.8); opacity: 0; }
+            from { transform: scale(0.7); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
         .modal-content h2 {
             color: #58a6ff;
-            margin-bottom: 15px;
-            font-size: 22px;
+            margin-bottom: 18px;
+            font-size: 24px;
             border-bottom: 1px solid #30363d;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
         }
         .modal-content p, .modal-content li {
             color: #c9d1d9;
             font-size: 16px;
-            line-height: 1.8;
+            line-height: 1.9;
         }
         .modal-content ul {
-            padding-right: 20px;
-            margin-top: 10px;
+            padding-right: 22px;
+            margin-top: 12px;
+        }
+        .modal-content li {
+            margin-bottom: 8px;
         }
         .close-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 8px 20px;
+            display: block;
+            width: 100%;
+            margin-top: 25px;
+            padding: 12px;
             background: #da3633;
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 10px;
             cursor: pointer;
             font-weight: bold;
+            font-size: 16px;
+            transition: background 0.3s ease;
         }
         .close-btn:hover {
             background: #f85149;
@@ -189,22 +222,23 @@
 <body>
 
     <div class="container">
+        <div class="badge">DMD243 Cloud Computing Project</div>
         <div class="icon-3d">🛡️</div>
         <h1>Cyber Risk & Cloud Computing</h1>
-        <p class="subtitle">مرحباً بكم في مشروعنا الأكاديمي لمادة الحوسبة السحابية والأنظمة المدمجة (DMD243)</p>
+        <p class="subtitle">منصة أكاديمية تفاعلية لعرض مشروع الحوسبة السحابية وأمن المعلومات</p>
         
         <div class="card-grid">
             <!-- بطاقة أعضاء المجموعة -->
             <div class="info-card">
                 <h3>👥 فريق العمل</h3>
-                <p>تعرف على أعضاء المجموعة المشاركين في إنجاز هذا المشروع السحابي.</p>
+                <p>استعرض أسماء أعضاء المجموعة المشاركين في إنجاز هذا المشروع.</p>
                 <button class="card-btn" onclick="openModal('teamModal')">عرض أعضاء المجموعة</button>
             </div>
 
             <!-- بطاقة المخاطر السيبرانية -->
             <div class="info-card">
                 <h3>🔒 المخاطر السيبرانية</h3>
-                <p>اطّلع على نظرة عامة حول التهديدات وأمن المعلومات في الحوسبة السحابية.</p>
+                <p>تعرف على مفهوم المخاطر السيبرانية وأبرز التهديدات في البيئات السحابية.</p>
                 <button class="card-btn" onclick="openModal('cyberModal')">قراءة التفاصيل</button>
             </div>
         </div>
@@ -231,12 +265,12 @@
     <div id="cyberModal" class="modal">
         <div class="modal-content">
             <h2>شرح المخاطر السيبرانية (Cyber Risks)</h2>
-            <p>المخاطر السيبرانية هي التهديدات المحتملة التي تستهدف الأنظمة الرقمية، البيانات، والشبكات السحابية بهدف الاختراق أو السرقة أو التخريب.</p>
-            <p style="margin-top: 10px;"><strong>أبرز المخاطر في الحوسبة السحابية:</strong></p>
+            <p>المخاطر السيبرانية هي احتمالية تعرض الأنظمة الرقمية والبيانات للاختراق أو التخريب أو التسلل غير المصرّح به عبر الإنترنت أو الشبكات السحابية.</p>
+            <p style="margin-top: 12px;"><strong>أهم المخاطر السيبرانية السحابية:</strong></p>
             <ul>
-                <li>اختراق بيانات المستخدمين وتسريبها.</li>
-                <li>ضعف إعدادات الأمان في الأذونات والصلاحيات السحابية.</li>
-                <li>هجمات حجب الخدمة (DDoS) وتعطيل الخوادم.</li>
+                <li><strong>تسرب البيانات:</strong> فقدان سرية معلومات المستخدمين الحساسة.</li>
+                <li><strong>سوء إعدادات الأمان:</strong> الأخطاء في صلاحيات الوصول التي تفتح ثغرات للمهاجمين.</li>
+                <li><strong>هجمات حجب الخدمة (DDoS):</strong> إغراق الخوادم لتعطيل عمل المنصات السحابية.</li>
             </ul>
             <button class="close-btn" onclick="closeModal('cyberModal')">إغلاق</button>
         </div>

@@ -3,56 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Our Cloud Project</title>
+    <title>Cyber Risk & Cloud Computing Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
         body {
-            font-family: Tahoma, Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
-            text-align: center;
-            padding: 50px;
+            background: linear-gradient(135deg, #0d1117, #161b22, #1f242d);
+            color: #c9d1d9;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            perspective: 1000px;
         }
         .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 900px;
+            background: rgba(22, 27, 34, 0.85);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 
+                        0 0 30px rgba(0, 112, 243, 0.2);
+            transform-style: preserve-3d;
+            animation: floatCard 6s ease-in-out infinite;
+            text-align: center;
+        }
+        @keyframes floatCard {
+            0%, 100% {
+                transform: translateY(0) rotateX(2deg) rotateY(-2deg);
+            }
+            50% {
+                transform: translateY(-10px) rotateX(-2deg) rotateY(2deg);
+            }
+        }
+        .icon-3d {
+            font-size: 65px;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 20px rgba(0, 255, 128, 0.4);
+            animation: pulseIcon 2s infinite;
+        }
+        @keyframes pulseIcon {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
         h1 {
-            color: #007bff;
+            color: #58a6ff;
+            font-size: 38px;
+            margin-bottom: 15px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 10px rgba(88, 166, 255, 0.4);
         }
-        p {
-            line-height: 1.6;
+        .subtitle {
+            color: #8b949e;
             font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 35px;
+            text-align: right;
+        }
+        .info-card {
+            background: rgba(13, 17, 23, 0.6);
+            border: 1px solid #30363d;
+            padding: 20px;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            transform: translateZ(20px);
+        }
+        .info-card:hover {
+            transform: translateZ(40px) translateY(-5px);
+            border-color: #58a6ff;
+            box-shadow: 0 10px 20px rgba(88, 166, 255, 0.2);
+        }
+        .info-card h3 {
+            color: #3fb950;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .info-card p {
+            color: #8b949e;
+            font-size: 15px;
+            line-height: 1.5;
         }
         .btn {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #28a745;
+            margin-top: 10px;
+            padding: 14px 35px;
+            background: linear-gradient(135deg, #238636, #2ea043);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 30px;
             font-weight: bold;
+            font-size: 17px;
+            box-shadow: 0 8px 20px rgba(35, 134, 54, 0.4);
+            transition: all 0.3s ease;
+            transform: translateZ(30px);
         }
         .btn:hover {
-            background-color: #218838;
+            background: linear-gradient(135deg, #2ea043, #3fb950);
+            transform: translateZ(50px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(46, 160, 67, 0.6);
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Welcome to Our Cloud Project</h1>
-        <p>مرحباً بكم في صفحة مشروعنا لمادة الحوسبة السحابية والأنظمة المدمجة (DMD243).</p>
-        <p><strong>أعضاء المجموعة:</strong><br>
-        نواف مديش عماش طوهري وزملائُه</p>
-        <p>يهدف هذا المشروع إلى تطبيق مفهوم التخزين السحابي والاستضافة السحابية وتفعيل أدوات التعاون والعمل الجماعي.</p>
+        <div class="icon-3d">🛡️</div>
+        <h1>Cyber Risk & Cloud Computing</h1>
+        <p class="subtitle">مرحباً بكم في مشروعنا الأكاديمي لمادة الحوسبة السحابية والأنظمة المدمجة (DMD243)</p>
         
+        <div class="card-grid">
+            <div class="info-card">
+                <h3>👥 أعضاء المجموعة</h3>
+                <p>نواف مديش عماش طوهري وزملائه الكرام</p>
+            </div>
+            <div class="info-card">
+                <h3>🔒 المخاطر السيبرانية</h3>
+                <p>تحليل المخاطر وحماية أمان البيانات والأنظمة السحابية بكفاءة عالية</p>
+            </div>
+        </div>
+
         <!-- رابط مجلد Google Drive المشترك -->
-        <a href="https://drive.google.com/drive/u/0/home" class="btn" target="_blank">رابط مجلد Google Drive المشترك</a>
+        <a href="https://drive.google.com" class="btn" target="_blank">📂 رابط مجلد Google Drive المشترك</a>
     </div>
 
 </body>

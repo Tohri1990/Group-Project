@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HydroPulse X - Smart Water Pump</title>
+    <title>AuraLux - Smart Adaptive Lighting System</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -14,7 +14,7 @@
             scroll-behavior: smooth;
         }
         body {
-            background: #050b14;
+            background: #080c14;
             color: #e2e8f0;
             overflow-x: hidden;
         }
@@ -24,17 +24,17 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(5, 11, 20, 0.85);
+            background: rgba(8, 12, 20, 0.85);
             backdrop-filter: blur(15px);
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 8%;
-            border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+            border-bottom: 1px solid rgba(255, 183, 3, 0.2);
             z-index: 1000;
         }
         .logo {
-            color: #00f2fe;
+            color: #ffb703;
             font-size: 22px;
             font-weight: 900;
             letter-spacing: 1px;
@@ -52,10 +52,10 @@
             transition: color 0.3s;
         }
         .nav-links a:hover {
-            color: #00f2fe;
+            color: #ffb703;
         }
 
-        /* القسم الرئيسي الأول (Hero) */
+        /* القسم الرئيسي (Hero) */
         header {
             height: 100vh;
             display: flex;
@@ -64,13 +64,13 @@
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            background: radial-gradient(circle at center, #0f1c35 0%, #050b14 100%);
+            background: radial-gradient(circle at center, #1e263c 0%, #080c14 100%);
             position: relative;
         }
         .hero-badge {
-            background: rgba(0, 242, 254, 0.1);
-            border: 1px solid rgba(0, 242, 254, 0.4);
-            color: #00f2fe;
+            background: rgba(255, 183, 3, 0.1);
+            border: 1px solid rgba(255, 183, 3, 0.4);
+            color: #ffb703;
             padding: 8px 20px;
             border-radius: 30px;
             font-size: 14px;
@@ -78,22 +78,22 @@
             margin-bottom: 20px;
             text-transform: uppercase;
         }
-        .pump-icon-3d {
+        .hero-icon-3d {
             font-size: 85px;
             margin-bottom: 20px;
-            filter: drop-shadow(0 0 25px rgba(0, 242, 254, 0.6));
-            animation: floatPump 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 25px rgba(255, 183, 3, 0.5));
+            animation: floatGlow 4s ease-in-out infinite;
         }
-        @keyframes floatPump {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(2deg); }
+        @keyframes floatGlow {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.05); }
         }
         header h1 {
-            font-size: 48px;
+            font-size: 46px;
             font-weight: 900;
             color: #ffffff;
             margin-bottom: 15px;
-            text-shadow: 0 4px 20px rgba(0, 242, 254, 0.4);
+            text-shadow: 0 4px 20px rgba(255, 183, 3, 0.3);
         }
         header p {
             font-size: 18px;
@@ -103,22 +103,22 @@
             margin-bottom: 30px;
         }
         .cta-btn {
-            background: linear-gradient(135deg, #0070f3, #00f2fe);
-            color: white;
+            background: linear-gradient(135deg, #fb8500, #ffb703);
+            color: #080c14;
             padding: 15px 35px;
             border-radius: 14px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 900;
             font-size: 17px;
-            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.4);
+            box-shadow: 0 10px 30px rgba(255, 183, 3, 0.4);
             transition: all 0.3s ease;
         }
         .cta-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 242, 254, 0.7);
+            box-shadow: 0 15px 40px rgba(255, 183, 3, 0.7);
         }
 
-        /* أقسام المحتوى الطويلة */
+        /* أقسام المحتوى */
         section {
             padding: 100px 10%;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -144,8 +144,8 @@
             gap: 30px;
         }
         .feature-card {
-            background: rgba(13, 22, 38, 0.7);
-            border: 1px solid rgba(0, 242, 254, 0.15);
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid rgba(255, 183, 3, 0.15);
             padding: 35px 30px;
             border-radius: 20px;
             backdrop-filter: blur(10px);
@@ -154,11 +154,11 @@
         }
         .feature-card:hover {
             transform: translateY(-8px);
-            border-color: #00f2fe;
-            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.2);
+            border-color: #ffb703;
+            box-shadow: 0 20px 40px rgba(255, 183, 3, 0.2);
         }
         .feature-card h3 {
-            color: #00f2fe;
+            color: #ffb703;
             font-size: 21px;
             margin-bottom: 12px;
             font-weight: 700;
@@ -169,7 +169,7 @@
             line-height: 1.8;
         }
 
-        /* قسم المواصفات التقنية (Specs) */
+        /* قسم المواصفات والخصائص */
         .specs-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -178,7 +178,7 @@
         }
         @media(max-width: 768px) {
             .specs-container { grid-template-columns: 1fr; }
-            header h1 { font-size: 36px; }
+            header h1 { font-size: 34px; }
         }
         .specs-list {
             list-style: none;
@@ -188,21 +188,21 @@
             margin-bottom: 15px;
             padding: 18px 22px;
             border-radius: 12px;
-            border-right: 4px solid #00f2fe;
+            border-right: 4px solid #ffb703;
             font-size: 16px;
             font-weight: 700;
             display: flex;
             justify-content: space-between;
         }
         .specs-list span {
-            color: #00f2fe;
+            color: #ffb703;
         }
 
-        /* تذييل الصفحة (Footer) */
+        /* التذييل */
         footer {
             text-align: center;
             padding: 40px;
-            background: #03070d;
+            background: #04060a;
             color: #64748b;
             font-size: 15px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -213,67 +213,67 @@
 
     <!-- شريط التنقل -->
     <nav>
-        <div class="logo">⚡ HydroPulse X</div>
+        <div class="logo">💡 AuraLux</div>
         <ul class="nav-links">
             <li><a href="#home">الرئيسية</a></li>
             <li><a href="#features">المميزات</a></li>
-            <li><a href="#specs">المواصفات</a></li>
+            <li><a href="#specs">الخصائص التقنية</a></li>
         </ul>
     </nav>
 
     <!-- الواجهة الرئيسية -->
     <header id="home">
-        <div class="hero-badge">التكنولوجيا الذكية لضخ المياه</div>
-        <div class="pump-icon-3d">⚙️💧</div>
-        <h1>مضخة المياه الذكية HydroPulse X</h1>
-        <p>نظام ضخ متطور يعمل بالذكاء الاصطناعي، مصمم لتوفير طاقة ضخ هائلة مع كفاءة استثنائية في استهلاك الكهرباء وحماية كاملة ضد الجفاف.</p>
-        <a href="#features" class="cta-btn">استكشف المميزات التقنية</a>
+        <div class="hero-badge">مستقبل الإضاءة الذكية والبيئية</div>
+        <div class="hero-icon-3d">💡✨</div>
+        <h1>نظام الإضاءة الذكي AuraLux</h1>
+        <p>نظام إضاءة متطور يتكيف مع حركة المستخدمين ودرجة الإضاءة الطبيعية لتقليص استهلاك الطاقة حتى 65% مع خلق بيئة مريحة للعين.</p>
+        <a href="#features" class="cta-btn">اكتشف مميزات النظام</a>
     </header>
 
-    <!-- قسم المميزات الخرافية -->
+    <!-- قسم المميزات -->
     <section id="features">
-        <h2 class="section-title">لماذا تعتبر HydroPulse X الخيار الأفضل؟</h2>
-        <p class="section-desc">تم هندسة هذه المضخة باستخدام أحدث تقنيات التحكم الرقمي لضمان أداء مستدام وعمر تشغيلي أطول.</p>
+        <h2 class="section-title">لماذا يُعد AuraLux الثورة القادمة؟</h2>
+        <p class="section-desc">تم تصميم النظام ليوفر حلاً متكاملاً يجمع بين الأناقة المعمارية والذكاء الاصطناعي.</p>
         
         <div class="features-grid">
             <div class="feature-card">
-                <h3>🚀 ضغط مائي متغير (VFD)</h3>
-                <p>تتكيّف المضخة تلقائياً مع حجم استهلاكك للمياه لضمان ثبات تام في قوة الضغط دون أي هدر في الطاقة.</p>
+                <h3>🧠 الاستشعار التكيفي بالذكاء الاصطناعي</h3>
+                <p>تتعلم خوارزميات النظام أوقات تواجدك في الغرف لتعديل شدة السطوع ودرجة اللون تدريجياً وبدون أي تدخل يدوي.</p>
             </div>
             <div class="feature-card">
-                <h3>🛡️ الحماية الذكية الشاملة</h3>
-                <p>نظام استشعار مدمج يمنع الاحتراق الجاف، ويحمي المحرك من ارتفاع درجات الحرارة والتقلبات الكهربائية.</p>
+                <h3>☀️ مواءمة الإضاءة البيولوجية</h3>
+                <p>تتغير درجات الألوان على مدار اليوم لتتطابق مع إيقاع الساعة البيولوجية للجسم، مما يرفع من مستوى التركيز وجودة النوم.</p>
             </div>
             <div class="feature-card">
-                <h3>📱 تحكم كامل عبر التطبيق</h3>
-                <p>راقب استهلاكك، تحكم في تشغيل وإيقاف المضخة، وتلقى تنبيهات فورية عن حالة الأنابيب من هاتفك مباشرة.</p>
+                <h3>⚡ كفاءة استثنائية في استهلاك الطاقة</h3>
+                <p>استخدام تقنيات ليد متطورة مع مستشعرات طاقة دقيقة تضمن توفير فواتير الكهرباء بنسب غير مسبوقة.</p>
             </div>
         </div>
     </section>
 
-    <!-- قسم المواصفات الفنية -->
+    <!-- قسم الخصائص التقنية -->
     <section id="specs">
-        <h2 class="section-title">المواصفات الفنية المتقدمة</h2>
-        <p class="section-desc">أرقام وأداء حقيقي مصمم لتحمل أقسى الظروف التشغيلية.</p>
+        <h2 class="section-title">الخصائص والمواصفات الفنية</h2>
+        <p class="section-desc">مواصفات دقيقة تم تصميمها لأعلى معايير الجودة والاستدامة.</p>
         
         <div class="specs-container">
             <ul class="specs-list">
-                <li>قدرة المحرك: <span>3.0 حصان (متطور)</span></li>
-                <li>أقصى معدل تدفق: <span>120 لتر / دقيقة</span></li>
-                <li>أقصى ضغط رفع: <span>65 متر عمودي</span></li>
-                <li>مستوى الضوضاء: <span>أقل من 45 ديسبل (هادئة جداً)</span></li>
+                <li>عمر التشغيل الافتراضي: <span>أكثر من 50,000 ساعة</span></li>
+                <li>بروتوكول الاتصال: <span>شبكة ذكية مشفرة (Mesh Network)</span></li>
+                <li>درجة حرارة اللون (CCT): <span>من 2700K إلى 6500K</span></li>
+                <li>معدل استهلاك الطاقة: <span>12 واط فقط للوحدة</span></li>
             </ul>
-            <div style="background: rgba(0,242,254,0.05); border: 1px dashed rgba(0,242,254,0.3); padding: 40px; border-radius: 20px; text-align: center;">
-                <div style="font-size: 50px; margin-bottom: 15px;">🔋</div>
-                <h3 style="color: #00f2fe; margin-bottom: 10px; font-size: 22px;">توفير الطاقة الذكي</h3>
-                <p style="color: #94a3b8; line-height: 1.8;">تستهلك طاقة أقل بنسبة 40% مقارنة بالمضخات التقليدية، مما ينعكس بشكل مباشر على تقليل فاتورة الكهرباء الشهرية.</p>
+            <div style="background: rgba(255,183,3,0.04); border: 1px dashed rgba(255,183,3,0.3); padding: 40px; border-radius: 20px; text-align: center;">
+                <div style="font-size: 50px; margin-bottom: 15px;">🌐</div>
+                <h3 style="color: #ffb703; margin-bottom: 10px; font-size: 22px;">التحكم السحابي الشامل</h3>
+                <p style="color: #94a3b8; line-height: 1.8;">إدارة كافة مصابيح منزلك أو منشأتك عبر تطبيق هاتف ذكي مصمم بواجهة سلسة وسريعة الاستجابة من أي مكان في العالم.</p>
             </div>
         </div>
     </section>
 
     <!-- التذييل -->
     <footer>
-        <p>جميع الحقوق محفوظة © 2026 - مشروع المضخة الذكية HydroPulse X</p>
+        <p>جميع الحقوق محفوظة © 2026 - مشروع نظام الإضاءة الذكي AuraLux</p>
     </footer>
 
 </body>

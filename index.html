@@ -359,39 +359,70 @@
         </div>
     </section>
 
-   <section class="teams-section">
-    <!-- نادي النصر -->
-    <div class="team-card" onclick="openModal('nasrModal')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/c/c7/Al-Nassr_FC_logo.svg" alt="شعار النصر" width="80">
-        <h3>نادي النصر</h3>
-        <p>العالمي وكتيبة النجوم الكبرى والأسطورة.</p>
-        <button class="team-btn">عرض القائمة واللاعبين</button>
+    <!-- نافذة الهلال -->
+    <div id="hilalModal" class="modal">
+        <div class="modal-content">
+            <img src="https://upload.wikimedia.org/wikipedia/en/c/c7/Al-Nassr_FC_logo.svg" alt="شعار النصر" width="80">
+            <h2>قائمة لاعبي الهلال</h2>
+            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">اضغط على اللاعب لعرض الطاقات والتفاصيل:</p>
+            <ul class="players-list">
+                <li onclick="showPlayer('سالم الدوسري', 'الجناح / الهجوم', '34 سنة', 'المملكة العربية السعودية', 'القائد وأفضل لاعب آسيوي بمهارات خارقة واختراق دقيق.', '92', '89', '88', '50', '85')"><span>سالم الدوسري</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('ألكسندر ميتروفيتش', 'مهاجم صريح', '31 سنة', 'صربيا', 'هداف الفريق والمرعب الهجومي بضربات رأسية قاتلة.', '82', '91', '78', '40', '93')"><span>ألكسندر ميتروفيتش</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('ياسين بونو', 'حارس مرمى', '35 سنة', 'المغرب', 'أفضل حارس مرمى أفريقي وعالمي بردود فعل فدائية.', '88', '85', '84', '89', '86')"><span>ياسين بونو</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('سيرجي سافيتش', 'خط وسط مركزى', '31 سنة', 'صربيا', 'مايسترو الوسط، صناعة لعب محكمة وبنية قوية.', '79', '84', '87', '82', '88')"><span>سيرجي سافيتش</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('روبن نيفيز', 'محور ارتكاز', '29 سنة', 'البرتغال', 'رمانة ميزان الفريق وتمريرات طويلة صاروخية.', '75', '83', '90', '85', '79')"><span>روبن نيفيز</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+            </ul>
+            <button class="close-btn" onclick="closeModal('hilalModal')">إغلاق</button>
+        </div>
     </div>
 
-    <!-- نادي الهلال -->
-    <div class="team-card" onclick="openModal('hilalModal')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/2/23/Al-Hilal_Saudi_FC_logo.svg" alt="شعار الهلال" width="80">
-        <h3>نادي الهلال</h3>
-        <p>زعيم آسيا وأكثر الأندية تتويجاً بالبطولات.</p>
-        <button class="team-btn">عرض القائمة واللاعبين</button>
+    <!-- نافذة النصر -->
+    <div id="nasrModal" class="modal">
+        <div class="modal-content">
+            <h2>قائمة لاعبي النصر</h2>
+            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">اضغط على اللاعب لعرض الطاقات والتفاصيل:</p>
+            <ul class="players-list">
+                <li onclick="showPlayer('كريستيانو رونالدو', 'مهاجم / قائد', '41 سنة', 'البرتغال', 'أسطورة كرة القدم العالمية، هداف استثنائي وإنهاء هجمات فتاك.', '85', '94', '82', '45', '88')"><span>كريستيانو رونالدو</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('ساديو ماني', 'جناح أيسر', '34 سنة', 'السنغال', 'نجم السرعة والانطلاقات ومقلق المدافعين.', '90', '86', '81', '42', '76')"><span>ساديو ماني</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('أوتافيو مونتيرو', 'خط وسط هجومي', '31 سنة', 'البرتغال', 'حركة دؤوبة وضغط عالٍ وصناعة فرص متواصلة.', '84', '79', '85', '78', '74')"><span>أوتافيو مونتيرو</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('إيمريك لابورت', 'قلب دفاع', '32 سنة', 'إسبانيا', 'صمام الأمان الخلفي وقراءة ممتازة للخصوم.', '72', '50', '78', '89', '84')"><span>إيمريك لابورت</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('أندرسون تاليسكا', 'صانع لعب / جناح', '32 سنة', 'البرازيل', 'صاحب التسديدات البعيدة الصاروخية والمهارات الحريرية.', '80', '88', '82', '40', '78')"><span>أندرسون تاليسكا</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+            </ul>
+            <button class="close-btn" onclick="closeModal('nasrModal')">إغلاق</button>
+        </div>
     </div>
 
-    <!-- نادي الأهلي -->
-    <div class="team-card" onclick="openModal('ahliModal')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/0/07/Al-Ahli_Saudi_FC.svg" alt="شعار الأهلي" width="80">
-        <h3>نادي الأهلي</h3>
-        <p>الراقي وعراقة قلعة الكؤوس السعودية.</p>
-        <button class="team-btn">عرض القائمة واللاعبين</button>
+    <!-- نافذة الاتحاد -->
+    <div id="ittihadModal" class="modal">
+        <div class="modal-content">
+            <h2>قائمة لاعبي الاتحاد</h2>
+            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">اضغط على اللاعب لعرض الطاقات والتفاصيل:</p>
+            <ul class="players-list">
+                <li onclick="showPlayer('كريم بنزيما', 'مهاجم صريح', '38 سنة', 'فرنسا', 'قائد الفريق الحائز على الكرة الذهبية، ذكاء ميداني فريد.', '81', '90', '87', '40', '83')"><span>كريم بنزيما</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('نغولو كانتي', 'خط وسط دفاعي', '35 سنة', 'فرنسا', 'دينامو لا يتعب، قطع كرات واستخلاص مثالي بالوسط.', '86', '72', '82', '91', '75')"><span>نغولو كانتي</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('فابينيو', 'محور ارتكاز', '32 سنة', 'البرازيل', 'صمام أمان دفاعي وقوة بدنية هائلة في افتكاك الكرات.', '68', '60', '80', '88', '86')"><span>فابينيو</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('حسام عوار', 'خط وسط هجومي', '28 سنة', 'الجزائر', 'رؤية فنية عالية وتمريرات بينية متقنة.', '82', '78', '84', '70', '68')"><span>حسام عوار</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('بريدراج رايكوفيتش', 'حارس مرمى', '30 سنة', 'صربيا', 'ردود فعل سريعة وثبات انفعالي كبير تحت العارضة.', '83', '80', '82', '85', '84')"><span>بريدراج رايكوفيتش</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+            </ul>
+            <button class="close-btn" onclick="closeModal('ittihadModal')">إغلاق</button>
+        </div>
     </div>
 
-    <!-- نادي الاتحاد -->
-    <div class="team-card" onclick="openModal('ittihadModal')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/2/2f/Al-Ittihad_Club_%28Jeddah%29_logo.svg" alt="شعار الاتحاد" width="80">
-        <h3>نادي الاتحاد</h3>
-        <p>العميد وأبطال المملكة المونديالي.</p>
-        <button class="team-btn">عرض القائمة واللاعبين</button>
+    <!-- نافذة الأهلي -->
+    <div id="ahliModal" class="modal">
+        <div class="modal-content">
+            <h2>قائمة لاعبي الأهلي</h2>
+            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">اضغط على اللاعب لعرض الطاقات والتفاصيل:</p>
+            <ul class="players-list">
+                <li onclick="showPlayer('روبرتو فيرمينو', 'مهاجم وهمي', '34 سنة', 'البرازيل', 'فنان ذو مهارات استثنائية وربط خطوط الهجوم بذكاء.', '79', '83', '85', '52', '76')"><span>روبرتو فيرمينو</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('رياض محرز', 'جناح أيمن', '35 سنة', 'الجزائر', 'ساحر الكرات اليسارية والتراوغات الفنية المذهلة.', '83', '85', '89', '42', '69')"><span>رياض محرز</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('إدوارد ميندي', 'حارس مرمى', '34 سنة', 'السنغال', 'الجدار الحصين وطول قامة يمنع أخطر التسديدات.', '85', '82', '80', '87', '86')"><span>إدوارد ميندي</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('فانكي كيسي', 'خط وسط مركزي', '29 سنة', 'ساحل العاج', 'قوة بدنية وصلابة دفاعية وهجمات مرتدة صاروخية.', '81', '79', '80', '84', '86')"><span>فرانك كيسي</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('إيفان توني', 'مهاجم صريح', '30 سنة', 'إنجلترا', 'قناص الصناديق وتنفيذ مثالي لركلات الجزاء.', '82', '87', '76', '41', '89')"><span>إيفان توني</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+            </ul>
+            <button class="close-btn" onclick="closeModal('ahliModal')">إغلاق</button>
+        </div>
     </div>
-</section>
 
     <!-- نافذة تفاصيل اللاعب الفردية والطاقات -->
     <div id="playerModal" class="modal" style="z-index: 3000;">

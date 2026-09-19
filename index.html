@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AuraLux - Smart Adaptive Lighting System</title>
+    <title>Roshn Saudi League Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -14,27 +14,27 @@
             scroll-behavior: smooth;
         }
         body {
-            background: #080c14;
+            background: #070b14;
             color: #e2e8f0;
             overflow-x: hidden;
         }
-        /* شريط التنقل العلوي */
+        /* شريط التنقل */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(8, 12, 20, 0.85);
+            background: rgba(7, 11, 20, 0.9);
             backdrop-filter: blur(15px);
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 8%;
-            border-bottom: 1px solid rgba(255, 183, 3, 0.2);
+            border-bottom: 1px solid rgba(16, 185, 129, 0.2);
             z-index: 1000;
         }
         .logo {
-            color: #ffb703;
+            color: #10b981;
             font-size: 22px;
             font-weight: 900;
             letter-spacing: 1px;
@@ -52,25 +52,24 @@
             transition: color 0.3s;
         }
         .nav-links a:hover {
-            color: #ffb703;
+            color: #10b981;
         }
 
-        /* القسم الرئيسي (Hero) */
+        /* الواجهة الرئيسية */
         header {
-            height: 100vh;
+            height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            background: radial-gradient(circle at center, #1e263c 0%, #080c14 100%);
-            position: relative;
+            background: radial-gradient(circle at center, #0f231d 0%, #070b14 100%);
         }
         .hero-badge {
-            background: rgba(255, 183, 3, 0.1);
-            border: 1px solid rgba(255, 183, 3, 0.4);
-            color: #ffb703;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            color: #10b981;
             padding: 8px 20px;
             border-radius: 30px;
             font-size: 14px;
@@ -78,22 +77,12 @@
             margin-bottom: 20px;
             text-transform: uppercase;
         }
-        .hero-icon-3d {
-            font-size: 85px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 25px rgba(255, 183, 3, 0.5));
-            animation: floatGlow 4s ease-in-out infinite;
-        }
-        @keyframes floatGlow {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-10px) scale(1.05); }
-        }
         header h1 {
             font-size: 46px;
             font-weight: 900;
             color: #ffffff;
             margin-bottom: 15px;
-            text-shadow: 0 4px 20px rgba(255, 183, 3, 0.3);
+            text-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
         }
         header p {
             font-size: 18px;
@@ -103,22 +92,22 @@
             margin-bottom: 30px;
         }
         .cta-btn {
-            background: linear-gradient(135deg, #fb8500, #ffb703);
-            color: #080c14;
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
             padding: 15px 35px;
             border-radius: 14px;
             text-decoration: none;
-            font-weight: 900;
+            font-weight: bold;
             font-size: 17px;
-            box-shadow: 0 10px 30px rgba(255, 183, 3, 0.4);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
             transition: all 0.3s ease;
         }
         .cta-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(255, 183, 3, 0.7);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.7);
         }
 
-        /* أقسام المحتوى */
+        /* قسم الأندية */
         section {
             padding: 100px 10%;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -137,75 +126,144 @@
             margin-bottom: 60px;
         }
 
-        /* شبكة المميزات */
-        .features-grid {
+        .teams-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
         }
-        .feature-card {
+        .team-card {
             background: rgba(15, 23, 42, 0.75);
-            border: 1px solid rgba(255, 183, 3, 0.15);
-            padding: 35px 30px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 35px 25px;
             border-radius: 20px;
+            text-align: center;
             backdrop-filter: blur(10px);
             transition: all 0.4s ease;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
         }
-        .feature-card:hover {
+        .team-card:hover {
             transform: translateY(-8px);
-            border-color: #ffb703;
-            box-shadow: 0 20px 40px rgba(255, 183, 3, 0.2);
+            border-color: #10b981;
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.25);
         }
-        .feature-card h3 {
-            color: #ffb703;
-            font-size: 21px;
-            margin-bottom: 12px;
+        .team-icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+        .team-card h3 {
+            color: #ffffff;
+            font-size: 22px;
+            margin-bottom: 10px;
             font-weight: 700;
         }
-        .feature-card p {
+        .team-card p {
             color: #94a3b8;
-            font-size: 15px;
-            line-height: 1.8;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .team-btn {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid #10b981;
+            color: #10b981;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+        .team-btn:hover {
+            background: #10b981;
+            color: #070b14;
         }
 
-        /* قسم المواصفات والخصائص */
-        .specs-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+        /* نوافذ عرض اللاعبين والمعلومات (Modals) */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(7, 11, 20, 0.85);
+            backdrop-filter: blur(12px);
+            justify-content: center;
             align-items: center;
+            z-index: 2000;
+            padding: 20px;
         }
-        @media(max-width: 768px) {
-            .specs-container { grid-template-columns: 1fr; }
-            header h1 { font-size: 34px; }
+        .modal-content {
+            background: #0f172a;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            padding: 35px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 550px;
+            text-align: right;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+            animation: scaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .specs-list {
-            list-style: none;
+        @keyframes scaleUp {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
-        .specs-list li {
-            background: rgba(255, 255, 255, 0.03);
+        .modal-content h2 {
+            color: #10b981;
             margin-bottom: 15px;
-            padding: 18px 22px;
-            border-radius: 12px;
-            border-right: 4px solid #ffb703;
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+        .players-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+        .players-list li {
+            background: rgba(255, 255, 255, 0.03);
+            margin-bottom: 10px;
+            padding: 12px 18px;
+            border-radius: 10px;
+            border-right: 4px solid #10b981;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.2s;
         }
-        .specs-list span {
-            color: #ffb703;
+        .players-list li:hover {
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .player-info-box p {
+            color: #cbd5e1;
+            font-size: 16px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .close-btn {
+            display: block;
+            width: 100%;
+            margin-top: 25px;
+            padding: 12px;
+            background: #ef4444;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .close-btn:hover {
+            background: #dc2626;
         }
 
-        /* التذييل */
         footer {
             text-align: center;
             padding: 40px;
-            background: #04060a;
+            background: #04070d;
             color: #64748b;
             font-size: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
     </style>
 </head>
@@ -213,68 +271,159 @@
 
     <!-- شريط التنقل -->
     <nav>
-        <div class="logo">💡 AuraLux</div>
+        <div class="logo">⚽ Roshn Hub</div>
         <ul class="nav-links">
             <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#features">المميزات</a></li>
-            <li><a href="#specs">الخصائص التقنية</a></li>
+            <li><a href="#teams">الأندية</a></li>
         </ul>
     </nav>
 
     <!-- الواجهة الرئيسية -->
     <header id="home">
-        <div class="hero-badge">مستقبل الإضاءة الذكية والبيئية</div>
-        <div class="hero-icon-3d">💡✨</div>
-        <h1>نظام الإضاءة الذكي AuraLux</h1>
-        <p>نظام إضاءة متطور يتكيف مع حركة المستخدمين ودرجة الإضاءة الطبيعية لتقليص استهلاك الطاقة حتى 65% مع خلق بيئة مريحة للعين.</p>
-        <a href="#features" class="cta-btn">اكتشف مميزات النظام</a>
+        <div class="hero-badge">دوري روشن السعودي للمحترفين</div>
+        <h1>بوابة أندية وقوائم لاعبي الدوري</h1>
+        <p>تصفح أندية دوري روشن، وتعرف على تشكيلات الفرق وأعمار اللاعبين ومركازهم بتجربة تفاعلية متكاملة.</p>
+        <a href="#teams" class="cta-btn">استعراض الأندية المشاركة</a>
     </header>
 
-    <!-- قسم المميزات -->
-    <section id="features">
-        <h2 class="section-title">لماذا يُعد AuraLux الثورة القادمة؟</h2>
-        <p class="section-desc">تم تصميم النظام ليوفر حلاً متكاملاً يجمع بين الأناقة المعمارية والذكاء الاصطناعي.</p>
+    <!-- قسم الأندية -->
+    <section id="teams">
+        <h2 class="section-title">أندية دوري روشن</h2>
+        <p class="section-desc">اضغط على أي نادي لعرض قائمة اللاعبين والتفاصيل الخاصة بهم.</p>
         
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>🧠 الاستشعار التكيفي بالذكاء الاصطناعي</h3>
-                <p>تتعلم خوارزميات النظام أوقات تواجدك في الغرف لتعديل شدة السطوع ودرجة اللون تدريجياً وبدون أي تدخل يدوي.</p>
+        <div class="teams-grid">
+            <!-- الهلال -->
+            <div class="team-card" onclick="openModal('hilalModal')">
+                <div class="team-icon">🔵</div>
+                <h3>نادي الهلال</h3>
+                <p>زعيم آسيا وأبرز أندية الدوري.</p>
+                <button class="team-btn">عرض القائمة واللاعبين</button>
             </div>
-            <div class="feature-card">
-                <h3>☀️ مواءمة الإضاءة البيولوجية</h3>
-                <p>تتغير درجات الألوان على مدار اليوم لتتطابق مع إيقاع الساعة البيولوجية للجسم، مما يرفع من مستوى التركيز وجودة النوم.</p>
+
+            <!-- النصر -->
+            <div class="team-card" onclick="openModal('nasrModal')">
+                <div class="team-icon">🟡</div>
+                <h3>نادي النصر</h3>
+                <p>العالمي وكتيبة النجوم الكبرى.</p>
+                <button class="team-btn">عرض القائمة واللاعبين</button>
             </div>
-            <div class="feature-card">
-                <h3>⚡ كفاءة استثنائية في استهلاك الطاقة</h3>
-                <p>استخدام تقنيات ليد متطورة مع مستشعرات طاقة دقيقة تضمن توفير فواتير الكهرباء بنسب غير مسبوقة.</p>
+
+            <!-- الاتحاد -->
+            <div class="team-card" onclick="openModal('ittihadModal')">
+                <div class="team-icon">🐅</div>
+                <h3>نادي الاتحاد</h3>
+                <p>العميد وأبطال المملكة.</p>
+                <button class="team-btn">عرض القائمة واللاعبين</button>
+            </div>
+
+            <!-- الأهلي -->
+            <div class="team-card" onclick="openModal(' ahliModal ')">
+                <div class="team-icon">🟢</div>
+                <h3>نادي الأهلي</h3>
+                <p>الراقي وعراقة الكرة السعودية.</p>
+                <button class="team-btn">عرض القائمة واللاعبين</button>
             </div>
         </div>
     </section>
 
-    <!-- قسم الخصائص التقنية -->
-    <section id="specs">
-        <h2 class="section-title">الخصائص والمواصفات الفنية</h2>
-        <p class="section-desc">مواصفات دقيقة تم تصميمها لأعلى معايير الجودة والاستدامة.</p>
-        
-        <div class="specs-container">
-            <ul class="specs-list">
-                <li>عمر التشغيل الافتراضي: <span>أكثر من 50,000 ساعة</span></li>
-                <li>بروتوكول الاتصال: <span>شبكة ذكية مشفرة (Mesh Network)</span></li>
-                <li>درجة حرارة اللون (CCT): <span>من 2700K إلى 6500K</span></li>
-                <li>معدل استهلاك الطاقة: <span>12 واط فقط للوحدة</span></li>
+    <!-- نافذة الهلال -->
+    <div id="hilalModal" class="modal">
+        <div class="modal-content">
+            <h2>قائمة لاعبي الهلال</h2>
+            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">اضغط على اسم اللاعب لعرض تفاصيله:</p>
+            <ul class="players-list">
+                <li onclick="showPlayer('سالم الدوسري', 'الجناح / الهجوم', '34 سنة', 'المملكة العربية السعودية', 'القائد وأفضل لاعب آسيوي.')"><span>سالم الدوسري</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
+                <li onclick="showPlayer('ألكسندر ميتروفيتش', 'مهاجم صريح', '31 سنة', 'صربيا', 'هداف الفريق والمرعب الهجومي.')"><span>ألكسندر ميتروفيتش</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
+                <li onclick="showPlayer('ياسين بونو', 'حارس مرمى', '35 سنة', 'المغرب', 'أفضل حارس مرمى أفريقي وعالمي.')"><span>ياسين بونو</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
             </ul>
-            <div style="background: rgba(255,183,3,0.04); border: 1px dashed rgba(255,183,3,0.3); padding: 40px; border-radius: 20px; text-align: center;">
-                <div style="font-size: 50px; margin-bottom: 15px;">🌐</div>
-                <h3 style="color: #ffb703; margin-bottom: 10px; font-size: 22px;">التحكم السحابي الشامل</h3>
-                <p style="color: #94a3b8; line-height: 1.8;">إدارة كافة مصابيح منزلك أو منشأتك عبر تطبيق هاتف ذكي مصمم بواجهة سلسة وسريعة الاستجابة من أي مكان في العالم.</p>
-            </div>
+            <button class="close-btn" onclick="closeModal('hilalModal')">إغلاق</button>
         </div>
-    </section>
+    </div>
+
+    <!-- نافذة النصر -->
+    <div id="nasrModal" class="modal">
+        <div class="modal-content">
+            <h2>قائمة لاعبي النصر</h2>
+            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">اضغط على اسم اللاعب لعرض تفاصيله:</p>
+            <ul class="players-list">
+                <li onclick="showPlayer('كريستيانو رونالدو', 'مهاجم / قائد', '41 سنة', 'البرتغال', 'أسطورة كرة القدم العالمية وهداف الفريق.')"><span>كريستيانو رونالدو</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
+                <li onclick="showPlayer('ساديو ماني', 'جناح أيسر', '34 سنة', 'السنغال', 'نجم السرعة والمهارات العالية.')"><span>ساديو ماني</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
+                <li onclick="showPlayer('أوتافيو مونتيرو', 'خط وسط', '31 سنة', 'البرتغال', 'محرك العمليات في خط الوسط.')"><span>أوتافيو مونتيرو</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
+            </ul>
+            <button class="close-btn" onclick="closeModal('nasrModal')">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- نافذة الاتحاد -->
+    <div id="ittihadModal" class="modal">
+        <div class="modal-content">
+            <h2>قائمة لاعبي الاتحاد</h2>
+            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">اضغط على اسم اللاعب لعرض تفاصيله:</p>
+            <ul class="players-list">
+                <li onclick="showPlayer('كريّم بنزيما', 'مهاجم صريح', '38 سنة', 'فرنسا', 'قائد الفريق الحائز على الكرة الذهبية.')"><span>كريم بنزيما</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
+                <li onclick="showPlayer('نغولو كانتي', 'خط وسط دفاعي', '35 سنة', 'فرنسا', 'دينامو خط الوسط وقاطع الباصات.')"><span>نغولو كانتي</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
+                <li onclick="showPlayer('فابينيو', 'محور ارتكاز', '32 سنة', 'البرازيل', 'صمام الأمان الدفاعي وخبرة البريميرليغ.')"><span>فابينيو</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
+            </ul>
+            <button class="close-btn" onclick="closeModal('ittihadModal')">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- نافذة الأهلي -->
+    <div id="ahliModal" class="modal">
+        <div class="modal-content">
+            <h2>قائمة لاعبي الأهلي</h2>
+            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">اضغط على اسم اللاعب لعرض تفاصيله:</p>
+            <ul class="players-list">
+                <li onclick="showPlayer('روبرتو فيرمينو', 'مهاجم وهمي / صانع لعب', '34 سنة', 'البرازيل', 'الفنان ذو المهارات الاستثنائية في الهجوم.')"><span>روبرتو فيرمينو</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
+                <li onclick="showPlayer('رياض محرز', 'جناح أيمن', '35 سنة', 'الجزائر', 'ساحر الكرات العرضية واليسارية القاتلة.')"><span>رياض محرز</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
+                <li onclick="showPlayer('إدوارد ميندي', 'حارس مرمى', '34 سنة', 'السنغال', 'الجدار الحصين وحارس عرين الراقي.')"><span>إدوارد ميندي</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
+            </ul>
+            <button class="close-btn" onclick="closeModal('ahliModal')">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- نافذة تفاصيل اللاعب الفردية -->
+    <div id="playerModal" class="modal" style="z-index: 3000;">
+        <div class="modal-content">
+            <h2 id="pName">اسم اللاعب</h2>
+            <div class="player-info-box">
+                <p><strong>المركز:</strong> <span id="pPos" style="color: #10b981;">-</span></p>
+                <p><strong>العمر:</strong> <span id="pAge" style="color: #10b981;">-</span></p>
+                <p><strong>الجنسية:</strong> <span id="pNat" style="color: #10b981;">-</span></p>
+                <p><strong>نبذة تعريفية:</strong> <span id="pDesc" style="color: #94a3b8;">-</span></p>
+            </div>
+            <button class="close-btn" onclick="closeModal('playerModal')" style="background: #059669;">العودة للقائمة</button>
+        </div>
+    </div>
 
     <!-- التذييل -->
     <footer>
-        <p>جميع الحقوق محفوظة © 2026 - مشروع نظام الإضاءة الذكي AuraLux</p>
+        <p>جميع الحقوق محفوظة © 2026 - منصة دوري روشن السعودي</p>
     </footer>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+        function showPlayer(name, pos, age, nat, desc) {
+            document.getElementById('pName').innerText = name;
+            document.getElementById('pPos').innerText = pos;
+            document.getElementById('pAge').innerText = age;
+            document.getElementById('pNat').innerText = nat;
+            document.getElementById('pDesc').innerText = desc;
+            
+            // إظهار نافذة تفاصيل اللاعب
+            document.getElementById('playerModal').style.display = 'flex';
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roshn Saudi League Hub</title>
+    <title>دوري روشن السعودي - Roshn Saudi League</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -38,6 +38,14 @@
             font-size: 22px;
             font-weight: 900;
             letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
         }
         .nav-links {
             display: flex;
@@ -147,9 +155,12 @@
             border-color: #10b981;
             box-shadow: 0 20px 40px rgba(16, 185, 129, 0.25);
         }
-        .team-icon {
-            font-size: 55px;
+        .team-logo-img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
             margin-bottom: 15px;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
         }
         .team-card h3 {
             color: #ffffff;
@@ -179,7 +190,7 @@
             color: #070b14;
         }
 
-        /* نوافذ عرض اللاعبين والمعلومات (Modals) */
+        /* نافذة عرض اللاعبين والمعلومات (Modals) */
         .modal {
             display: none;
             position: fixed;
@@ -200,10 +211,12 @@
             padding: 35px;
             border-radius: 20px;
             width: 100%;
-            max-width: 550px;
+            max-width: 600px;
             text-align: right;
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
             animation: scaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-height: 90vh;
+            overflow-y: auto;
         }
         @keyframes scaleUp {
             from { transform: scale(0.7); opacity: 0; }
@@ -237,9 +250,26 @@
         }
         .player-info-box p {
             color: #cbd5e1;
-            font-size: 16px;
-            margin-bottom: 10px;
+            font-size: 15px;
+            margin-bottom: 8px;
             line-height: 1.6;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 12px;
+        }
+        .stat-item {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+        .stat-item span {
+            color: #10b981;
+            font-weight: bold;
         }
         .close-btn {
             display: block;
@@ -271,7 +301,10 @@
 
     <!-- شريط التنقل -->
     <nav>
-        <div class="logo">⚽ Roshn Hub</div>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/ar/thumb/9/91/Roshn_Saudi_League_%28logo%29.svg/1200px-Roshn_Saudi_League_%28logo%29.svg.png" alt="شعار دوري روشن">
+            دوري روشن السعودي
+        </div>
         <ul class="nav-links">
             <li><a href="#home">الرئيسية</a></li>
             <li><a href="#teams">الأندية</a></li>
@@ -282,45 +315,45 @@
     <header id="home">
         <div class="hero-badge">دوري روشن السعودي للمحترفين</div>
         <h1>بوابة أندية وقوائم لاعبي الدوري</h1>
-        <p>تصفح أندية دوري روشن، وتعرف على تشكيلات الفرق وأعمار اللاعبين ومركازهم بتجربة تفاعلية متكاملة.</p>
+        <p>تصفح أندية دوري روشن، واطلع على تشكيلات اللاعبين، الأعمار، الطاقات الفنية والمهارية الكاملة.</p>
         <a href="#teams" class="cta-btn">استعراض الأندية المشاركة</a>
     </header>
 
     <!-- قسم الأندية -->
     <section id="teams">
         <h2 class="section-title">أندية دوري روشن</h2>
-        <p class="section-desc">اضغط على أي نادي لعرض قائمة اللاعبين والتفاصيل الخاصة بهم.</p>
+        <p class="section-desc">اضغط على أي نادي لعرض قائمة اللاعبين والبيانات والطاقات الكاملة.</p>
         
         <div class="teams-grid">
             <!-- الهلال -->
             <div class="team-card" onclick="openModal('hilalModal')">
-                <div class="team-icon">🔵</div>
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/Al-Hilal_Saudi_Club_logo.svg/1200px-Al-Hilal_Saudi_Club_logo.svg.png" class="team-logo-img" alt="الهلال">
                 <h3>نادي الهلال</h3>
-                <p>زعيم آسيا وأبرز أندية الدوري.</p>
+                <p>زعيم آسيا وأكثر الأندية تتويجاً بالبطولات.</p>
                 <button class="team-btn">عرض القائمة واللاعبين</button>
             </div>
 
             <!-- النصر -->
             <div class="team-card" onclick="openModal('nasrModal')">
-                <div class="team-icon">🟡</div>
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Al-Nassr_FC_Logo.svg/1200px-Al-Nassr_FC_Logo.svg.png" class="team-logo-img" alt="النصر">
                 <h3>نادي النصر</h3>
-                <p>العالمي وكتيبة النجوم الكبرى.</p>
+                <p>العالمي وكتيبة النجوم الكبرى والأسطورة.</p>
                 <button class="team-btn">عرض القائمة واللاعبين</button>
             </div>
 
             <!-- الاتحاد -->
             <div class="team-card" onclick="openModal('ittihadModal')">
-                <div class="team-icon">🐅</div>
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/Al-Ittihad_Club_%28Jeddah%29_logo.svg/1200px-Al-Ittihad_Club_%28Jeddah%29_logo.svg.png" class="team-logo-img" alt="الاتحاد">
                 <h3>نادي الاتحاد</h3>
-                <p>العميد وأبطال المملكة.</p>
+                <p>العميد وأبطال المملكة المونديالي.</p>
                 <button class="team-btn">عرض القائمة واللاعبين</button>
             </div>
 
             <!-- الأهلي -->
-            <div class="team-card" onclick="openModal(' ahliModal ')">
-                <div class="team-icon">🟢</div>
+            <div class="team-card" onclick="openModal('ahliModal')">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/07/Al-Ahli_Saudi_FC.svg/1200px-Al-Ahli_Saudi_FC.svg.png" class="team-logo-img" alt="الأهلي">
                 <h3>نادي الأهلي</h3>
-                <p>الراقي وعراقة الكرة السعودية.</p>
+                <p>الراقي وعراقة قلعة الكؤوس السعودية.</p>
                 <button class="team-btn">عرض القائمة واللاعبين</button>
             </div>
         </div>
@@ -330,11 +363,13 @@
     <div id="hilalModal" class="modal">
         <div class="modal-content">
             <h2>قائمة لاعبي الهلال</h2>
-            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">اضغط على اسم اللاعب لعرض تفاصيله:</p>
+            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">اضغط على اللاعب لعرض الطاقات والتفاصيل:</p>
             <ul class="players-list">
-                <li onclick="showPlayer('سالم الدوسري', 'الجناح / الهجوم', '34 سنة', 'المملكة العربية السعودية', 'القائد وأفضل لاعب آسيوي.')"><span>سالم الدوسري</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
-                <li onclick="showPlayer('ألكسندر ميتروفيتش', 'مهاجم صريح', '31 سنة', 'صربيا', 'هداف الفريق والمرعب الهجومي.')"><span>ألكسندر ميتروفيتش</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
-                <li onclick="showPlayer('ياسين بونو', 'حارس مرمى', '35 سنة', 'المغرب', 'أفضل حارس مرمى أفريقي وعالمي.')"><span>ياسين بونو</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
+                <li onclick="showPlayer('سالم الدوسري', 'الجناح / الهجوم', '34 سنة', 'المملكة العربية السعودية', 'القائد وأفضل لاعب آسيوي بمهارات خارقة واختراق دقيق.', '92', '89', '88', '50', '85')"><span>سالم الدوسري</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('ألكسندر ميتروفيتش', 'مهاجم صريح', '31 سنة', 'صربيا', 'هداف الفريق والمرعب الهجومي بضربات رأسية قاتلة.', '82', '91', '78', '40', '93')"><span>ألكسندر ميتروفيتش</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('ياسين بونو', 'حارس مرمى', '35 سنة', 'المغرب', 'أفضل حارس مرمى أفريقي وعالمي بردود فعل فدائية.', '88', '85', '84', '89', '86')"><span>ياسين بونو</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('سيرجي سافيتش', 'خط وسط مركزى', '31 سنة', 'صربيا', 'مايسترو الوسط، صناعة لعب محكمة وبنية قوية.', '79', '84', '87', '82', '88')"><span>سيرجي سافيتش</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('روبن نيفيز', 'محور ارتكاز', '29 سنة', 'البرتغال', 'رمانة ميزان الفريق وتمريرات طويلة صاروخية.', '75', '83', '90', '85', '79')"><span>روبن نيفيز</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
             </ul>
             <button class="close-btn" onclick="closeModal('hilalModal')">إغلاق</button>
         </div>
@@ -344,11 +379,13 @@
     <div id="nasrModal" class="modal">
         <div class="modal-content">
             <h2>قائمة لاعبي النصر</h2>
-            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">اضغط على اسم اللاعب لعرض تفاصيله:</p>
+            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">اضغط على اللاعب لعرض الطاقات والتفاصيل:</p>
             <ul class="players-list">
-                <li onclick="showPlayer('كريستيانو رونالدو', 'مهاجم / قائد', '41 سنة', 'البرتغال', 'أسطورة كرة القدم العالمية وهداف الفريق.')"><span>كريستيانو رونالدو</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
-                <li onclick="showPlayer('ساديو ماني', 'جناح أيسر', '34 سنة', 'السنغال', 'نجم السرعة والمهارات العالية.')"><span>ساديو ماني</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
-                <li onclick="showPlayer('أوتافيو مونتيرو', 'خط وسط', '31 سنة', 'البرتغال', 'محرك العمليات في خط الوسط.')"><span>أوتافيو مونتيرو</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
+                <li onclick="showPlayer('كريستيانو رونالدو', 'مهاجم / قائد', '41 سنة', 'البرتغال', 'أسطورة كرة القدم العالمية، هداف استثنائي وإنهاء هجمات فتاك.', '85', '94', '82', '45', '88')"><span>كريستيانو رونالدو</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('ساديو ماني', 'جناح أيسر', '34 سنة', 'السنغال', 'نجم السرعة والانطلاقات ومقلق المدافعين.', '90', '86', '81', '42', '76')"><span>ساديو ماني</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('أوتافيو مونتيرو', 'خط وسط هجومي', '31 سنة', 'البرتغال', 'حركة دؤوبة وضغط عالٍ وصناعة فرص متواصلة.', '84', '79', '85', '78', '74')"><span>أوتافيو مونتيرو</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('إيمريك لابورت', 'قلب دفاع', '32 سنة', 'إسبانيا', 'صمام الأمان الخلفي وقراءة ممتازة للخصوم.', '72', '50', '78', '89', '84')"><span>إيمريك لابورت</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('أندرسون تاليسكا', 'صانع لعب / جناح', '32 سنة', 'البرازيل', 'صاحب التسديدات البعيدة الصاروخية والمهارات الحريرية.', '80', '88', '82', '40', '78')"><span>أندرسون تاليسكا</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
             </ul>
             <button class="close-btn" onclick="closeModal('nasrModal')">إغلاق</button>
         </div>
@@ -358,11 +395,13 @@
     <div id="ittihadModal" class="modal">
         <div class="modal-content">
             <h2>قائمة لاعبي الاتحاد</h2>
-            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">اضغط على اسم اللاعب لعرض تفاصيله:</p>
+            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">اضغط على اللاعب لعرض الطاقات والتفاصيل:</p>
             <ul class="players-list">
-                <li onclick="showPlayer('كريّم بنزيما', 'مهاجم صريح', '38 سنة', 'فرنسا', 'قائد الفريق الحائز على الكرة الذهبية.')"><span>كريم بنزيما</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
-                <li onclick="showPlayer('نغولو كانتي', 'خط وسط دفاعي', '35 سنة', 'فرنسا', 'دينامو خط الوسط وقاطع الباصات.')"><span>نغولو كانتي</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
-                <li onclick="showPlayer('فابينيو', 'محور ارتكاز', '32 سنة', 'البرازيل', 'صمام الأمان الدفاعي وخبرة البريميرليغ.')"><span>فابينيو</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
+                <li onclick="showPlayer('كريم بنزيما', 'مهاجم صريح', '38 سنة', 'فرنسا', 'قائد الفريق الحائز على الكرة الذهبية، ذكاء ميداني فريد.', '81', '90', '87', '40', '83')"><span>كريم بنزيما</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('نغولو كانتي', 'خط وسط دفاعي', '35 سنة', 'فرنسا', 'دينامو لا يتعب، قطع كرات واستخلاص مثالي بالوسط.', '86', '72', '82', '91', '75')"><span>نغولو كانتي</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('فابينيو', 'محور ارتكاز', '32 سنة', 'البرازيل', 'صمام أمان دفاعي وقوة بدنية هائلة في افتكاك الكرات.', '68', '60', '80', '88', '86')"><span>فابينيو</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('حسام عوار', 'خط وسط هجومي', '28 سنة', 'الجزائر', 'رؤية فنية عالية وتمريرات بينية متقنة.', '82', '78', '84', '70', '68')"><span>حسام عوار</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('بريدراج رايكوفيتش', 'حارس مرمى', '30 سنة', 'صربيا', 'ردود فعل سريعة وثبات انفعالي كبير تحت العارضة.', '83', '80', '82', '85', '84')"><span>بريدراج رايكوفيتش</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
             </ul>
             <button class="close-btn" onclick="closeModal('ittihadModal')">إغلاق</button>
         </div>
@@ -372,17 +411,19 @@
     <div id="ahliModal" class="modal">
         <div class="modal-content">
             <h2>قائمة لاعبي الأهلي</h2>
-            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">اضغط على اسم اللاعب لعرض تفاصيله:</p>
+            <p style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">اضغط على اللاعب لعرض الطاقات والتفاصيل:</p>
             <ul class="players-list">
-                <li onclick="showPlayer('روبرتو فيرمينو', 'مهاجم وهمي / صانع لعب', '34 سنة', 'البرازيل', 'الفنان ذو المهارات الاستثنائية في الهجوم.')"><span>روبرتو فيرمينو</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
-                <li onclick="showPlayer('رياض محرز', 'جناح أيمن', '35 سنة', 'الجزائر', 'ساحر الكرات العرضية واليسارية القاتلة.')"><span>رياض محرز</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
-                <li onclick="showPlayer('إدوارد ميندي', 'حارس مرمى', '34 سنة', 'السنغال', 'الجدار الحصين وحارس عرين الراقي.')"><span>إدوارد ميندي</span> <span style="color:#10b981;">التفاصيل ⬅</span></li>
+                <li onclick="showPlayer('روبرتو فيرمينو', 'مهاجم وهمي', '34 سنة', 'البرازيل', 'فنان ذو مهارات استثنائية وربط خطوط الهجوم بذكاء.', '79', '83', '85', '52', '76')"><span>روبرتو فيرمينو</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('رياض محرز', 'جناح أيمن', '35 سنة', 'الجزائر', 'ساحر الكرات اليسارية والتراوغات الفنية المذهلة.', '83', '85', '89', '42', '69')"><span>رياض محرز</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('إدوارد ميندي', 'حارس مرمى', '34 سنة', 'السنغال', 'الجدار الحصين وطول قامة يمنع أخطر التسديدات.', '85', '82', '80', '87', '86')"><span>إدوارد ميندي</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('فانكي كيسي', 'خط وسط مركزي', '29 سنة', 'ساحل العاج', 'قوة بدنية وصلابة دفاعية وهجمات مرتدة صاروخية.', '81', '79', '80', '84', '86')"><span>فرانك كيسي</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
+                <li onclick="showPlayer('إيفان توني', 'مهاجم صريح', '30 سنة', 'إنجلترا', 'قناص الصناديق وتنفيذ مثالي لركلات الجزاء.', '82', '87', '76', '41', '89')"><span>إيفان توني</span> <span style="color:#10b981;">الطاقات ⬅</span></li>
             </ul>
             <button class="close-btn" onclick="closeModal('ahliModal')">إغلاق</button>
         </div>
     </div>
 
-    <!-- نافذة تفاصيل اللاعب الفردية -->
+    <!-- نافذة تفاصيل اللاعب الفردية والطاقات -->
     <div id="playerModal" class="modal" style="z-index: 3000;">
         <div class="modal-content">
             <h2 id="pName">اسم اللاعب</h2>
@@ -391,6 +432,15 @@
                 <p><strong>العمر:</strong> <span id="pAge" style="color: #10b981;">-</span></p>
                 <p><strong>الجنسية:</strong> <span id="pNat" style="color: #10b981;">-</span></p>
                 <p><strong>نبذة تعريفية:</strong> <span id="pDesc" style="color: #94a3b8;">-</span></p>
+                
+                <h3 style="color: #10b981; font-size: 18px; margin-top: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px;">طاقات اللاعب:</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">السرعة: <span id="pSpd">-</span></div>
+                    <div class="stat-item">التسديد: <span id="pSho">-</span></div>
+                    <div class="stat-item">التمرير: <span id="pPas">-</span></div>
+                    <div class="stat-item">الدفاع: <span id="pDef">-</span></div>
+                    <div class="stat-item" style="grid-column: span 2; text-align: center;">البنية الجسدية: <span id="pPhy">-</span></div>
+                </div>
             </div>
             <button class="close-btn" onclick="closeModal('playerModal')" style="background: #059669;">العودة للقائمة</button>
         </div>
@@ -398,7 +448,7 @@
 
     <!-- التذييل -->
     <footer>
-        <p>جميع الحقوق محفوظة © 2026 - منصة دوري روشن السعودي</p>
+        <p>جميع الحقوق محفوظة © 2026 - دوري روشن السعودي للمحترفين</p>
     </footer>
 
     <script>
@@ -408,14 +458,19 @@
         function closeModal(modalId) {
             document.getElementById(modalId).style.display = 'none';
         }
-        function showPlayer(name, pos, age, nat, desc) {
+        function showPlayer(name, pos, age, nat, desc, spd, sho, pas, def, phy) {
             document.getElementById('pName').innerText = name;
             document.getElementById('pPos').innerText = pos;
             document.getElementById('pAge').innerText = age;
             document.getElementById('pNat').innerText = nat;
             document.getElementById('pDesc').innerText = desc;
             
-            // إظهار نافذة تفاصيل اللاعب
+            document.getElementById('pSpd').innerText = spd + ' / 100';
+            document.getElementById('pSho').innerText = sho + ' / 100';
+            document.getElementById('pPas').innerText = pas + ' / 100';
+            document.getElementById('pDef').innerText = def + ' / 100';
+            document.getElementById('pPhy').innerText = phy + ' / 100';
+            
             document.getElementById('playerModal').style.display = 'flex';
         }
         window.onclick = function(event) {

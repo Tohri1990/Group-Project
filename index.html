@@ -29,7 +29,6 @@
             overflow-x: hidden;
         }
 
-        /* شريط التنقل */
         nav {
             position: fixed;
             top: 0;
@@ -67,7 +66,6 @@
             color: var(--primary);
         }
 
-        /* الغلاف الرئيسي (Hero) */
         header.hero {
             min-height: 100vh;
             display: flex;
@@ -135,7 +133,6 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        /* المحتوى الرئيسي */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -164,7 +161,6 @@
             font-size: 16px;
         }
 
-        /* البطاقات الشبكية التفاعلية */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -220,7 +216,6 @@
             line-height: 1.7;
         }
 
-        /* أقسام المحتوى المعمقة */
         .content-block {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -256,7 +251,6 @@
             font-size: 80px;
         }
 
-        /* التذييل وخانة أسماء الأعضاء */
         footer {
             background: #010409;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -281,7 +275,6 @@
             border-color: var(--primary);
         }
 
-        /* النوافذ المنبثقة العامة (Modals) */
         .modal {
             display: none;
             position: fixed;
@@ -369,7 +362,6 @@
 </head>
 <body>
 
-    <!-- شريط التنقل -->
     <nav>
         <div class="nav-logo">🛡️ Cyber Risks Project</div>
         <ul class="nav-links">
@@ -379,7 +371,6 @@
         </ul>
     </nav>
 
-    <!-- واجهة الغلاف الرئيسي -->
     <header class="hero">
         <h1>مخاطر الأمن السيبراني وتحليل التهديدات الرقمية الحديثة</h1>
         <p>بحث شامل ومفصل حول آليات الحماية الرقمية، تحليل الثغرات الأمنية، وكيفية تأمين البنى التحتية الحساسة ضد الهجمات السيبرانية المتقدمة.</p>
@@ -390,7 +381,6 @@
     </header>
 
     <div class="container">
-        <!-- قسم نظرة عامة (البطاقات التفاعلية) -->
         <section id="overview">
             <div class="section-header">
                 <h2>مقدمة في المخاطر السيبرانية</h2>
@@ -416,7 +406,6 @@
             </div>
         </section>
 
-        <!-- قسم التهديدات والثغرات -->
         <section id="threats">
             <div class="section-header">
                 <h2>تحليل تفصيلي للثغرات الرقمية</h2>
@@ -446,7 +435,6 @@
             </div>
         </section>
 
-        <!-- قسم الحلول (البطاقات التفاعلية) -->
         <section id="solutions">
             <div class="section-header">
                 <h2>استراتيجيات الدفاع السيبراني</h2>
@@ -473,14 +461,11 @@
         </section>
     </div>
 
-    <!-- التذييل -->
     <footer>
         <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 5px;">جميع الحقوق محفوظة © 2026 - مشروع الأمن السيبراني (Cyber Risks)</p>
-        <!-- رابط أسماء الأعضاء التفاعلي -->
         <a class="team-credit-link" onclick="openTeamModal()">أعضاء الفريق المعدون للمشروع (انقر لعرض الأسماء)</a>
     </footer>
 
-    <!-- نافذة عرض الشرح التفصيلي للبطاقات -->
     <div id="detailModal" class="modal">
         <div class="modal-content">
             <h3 id="detailTitle">عنوان الشرح</h3>
@@ -489,7 +474,6 @@
         </div>
     </div>
 
-    <!-- نافذة أسماء الأعضاء المنبثقة -->
     <div id="teamModal" class="modal">
         <div class="modal-content">
             <h3>فريق عمل المشروع</h3>

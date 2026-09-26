@@ -176,7 +176,7 @@
             font-size: 16px;
         }
 
-        /* البطاقات الشبكية */
+        /* البطاقات الشبكية التفاعلية */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -189,11 +189,29 @@
             border-radius: 20px;
             padding: 35px;
             transition: 0.3s;
+            cursor: pointer;
+            position: relative;
         }
 
         .card:hover {
             border-color: var(--primary);
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.15);
+        }
+
+        .card::after {
+            content: "اضغط للتفاصيل ⬅";
+            position: absolute;
+            bottom: 20px;
+            left: 25px;
+            font-size: 12px;
+            color: var(--primary);
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .card:hover::after {
+            opacity: 1;
         }
 
         .card-icon {
@@ -275,7 +293,7 @@
             border-color: var(--primary);
         }
 
-        /* نافذة أسماء الأعضاء المنبثقة (Modal) */
+        /* النوافذ المنبثقة العامة (Modals) */
         .modal {
             display: none;
             position: fixed;
@@ -296,21 +314,31 @@
             padding: 40px;
             border-radius: 24px;
             width: 100%;
-            max-width: 550px;
-            text-align: center;
+            max-width: 650px;
+            text-align: right;
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .modal-content h3 {
             color: var(--primary);
             font-size: 26px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+
+        .modal-content p {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
         }
 
         .team-members-list {
             list-style: none;
             margin-bottom: 30px;
-            text-align: right;
         }
 
         .team-members-list li {
@@ -343,6 +371,7 @@
             cursor: pointer;
             width: 100%;
             transition: 0.3s;
+            margin-top: 20px;
         }
 
         .close-modal:hover {
@@ -369,30 +398,30 @@
         <p>بحث شامل ومفصل حول آليات الحماية الرقمية، تحليل الثغرات الأمنية، وكيفية تأمين البنى التحتية الحساسة ضد الهجمات السيبرانية المتقدمة.</p>
         <div class="hero-btns">
             <a href="#overview" class="btn-primary">استعراض المشروع</a>
-            <a href="https://drive.google.com" target="_blank" class="btn-secondary">📁 مجلد Google Drive</a>
+            <a href="https://drive.google.com/drive/u/2/home" target="_blank" class="btn-secondary">📁 مجلد Google Drive</a>
         </div>
     </header>
 
     <div class="container">
-        <!-- قسم نظرة عامة -->
+        <!-- قسم نظرة عامة (البطاقات التفاعلية) -->
         <section id="overview">
             <div class="section-header">
                 <h2>مقدمة في المخاطر السيبرانية</h2>
-                <p>فهم طبيعة التهديدات الرقمية الحديثة وتأثيرها على المؤسسات والأفراد</p>
+                <p>اضغط على أي بطاقة لعرض الشرح التفصيلي والعميق لكل تهديد</p>
             </div>
 
             <div class="grid-3">
-                <div class="card">
+                <div class="card" onclick="openDetailModal('APT', 'الهجمات المستمرة المتقدمة (APT) هي نوع من الهجمات السيبرانية المنظمة والموجهة بعناية، والتي غالبًا ما ترعاها جهات دولية أو عصابات إجرامية محترفة. تهدف هذه الهجمات إلى التسلل إلى شبكات المؤسسات الحساسة والبقاء فيها لفترات طويلة دون أن يتم اكتشافها، بغرض التجسس أو استخراج البيانات الاستراتيجية بشكل مستمر ودون لفت الانتباه.')">
                     <div class="card-icon">⚡</div>
                     <h3>الهجمات المعقدة (APT)</h3>
                     <p>التهديدات المستمرة المتقدمة التي تستهدف الاختراق طويل الأمد وسرقة البيانات الحساسة من المؤسسات الكبرى بأساليب غير تقليدية.</p>
                 </div>
-                <div class="card">
+                <div class="card" onclick="openDetailModal('Ransomware', 'برمجيات الفدية (Ransomware) هي أخطر أنواع البرمجيات الخبيثة الحديثة. تقوم باختراق الأنظمة وتشفير قواعد البيانات وملفات الشركات بالكامل باستخدام خوارزميات تشفير قوية، مما يجعل الوصول إليها مستحيلاً إلا بمفتاح فك التشفير الذي يحتفظ به المهاجم، والذي يطالب بفدية مالية ضخمة (غالباً بعملات رقمية مشفرة) للإفراج عن البيانات.')">
                     <div class="card-icon">🔓</div>
                     <h3>هجمات الفدية (Ransomware)</h3>
-                    <p>برمجيات خبيثة تقوم تشفير ملفات الضحية والمطالبة بفدية مالية ضخمة مقابل فك التشفير، مما يهدد استمرارية الأعمال.</p>
+                    <p>برمجيات خبيثة تقوم بتشفير ملفات الضحية والمطالبة بفدية مالية ضخمة مقابل فك التشفير، مما يهدد استمرارية الأعمال.</p>
                 </div>
-                <div class="card">
+                <div class="card" onclick="openDetailModal('Social Engineering', 'الهندسة الاجتماعية لا تستهدف الثغرات التقنية في الأنظمة، بل تستهدف العنصر البشري باعتباره الحلقة الأضعف. تعتمد على التلاعب النفسي، الخداع، انتحال الشخصيات، وإرسال رسائل التصيد الاحتيالي (Phishing) لدفع الموظفين إلى الكشف عن كلمات المرور أو منح الصلاحيات للمخترقين بكل سهولة دون إدراك منهم.')">
                     <div class="card-icon">🕵️‍♂️</div>
                     <h3>الهندسة الاجتماعية</h3>
                     <p>استغلال العنصر البشري خداعياً للحصول على بيانات الاعتماد الحساسة مثل كلمات المرور ومعالجة الثغرات النفسية للأفراد.</p>
@@ -410,7 +439,7 @@
             <div class="content-block">
                 <div class="content-text">
                     <h3>ثغرات البنية التحتية والشبكات</h3>
-                    <p>تشكل شبكات المؤسسات والشركات هدفاً رئيسياً للمهاجمين نتيجة ضعف التكوينات الأساسية وعدم تحديث الأنظمة بانتظام.</p>
+                    <p>تشكل شبكات المؤسسات والشركات هدفاً رئيسياً للمهاجمين نتيجة ضعف التكوينات الأساسية (Misconfigurations) وعدم تحديث الأنظمة بانتظام.</p>
                     <p>يتطلب التصدي لهذه المخاطر إجراء عمليات تقييم دورية للثغرات باستخدام أدوات فحص متقدمة ومراقبة حركة مرور البيانات عبر الجدران النارية.</p>
                 </div>
                 <div class="content-img-box">
@@ -430,25 +459,25 @@
             </div>
         </section>
 
-        <!-- قسم الحلول -->
+        <!-- قسم الحلول (البطاقات التفاعلية) -->
         <section id="solutions">
             <div class="section-header">
                 <h2>استراتيجيات الدفاع السيبراني</h2>
-                <p>أفضل الممارسات والمعايير العالمية لصد الهجمات الرقمية</p>
+                <p>اضغط على أي استراتيجية لعرض تفاصيل تطبيقها العملي والمعايير العالمية</p>
             </div>
 
             <div class="grid-3">
-                <div class="card">
+                <div class="card" onclick="openDetailModal('Zero Trust', 'نموذج الثقة المعدومة (Zero Trust) هو إطار عمل أمني حديث يغير الطريقة التقليدية في حماية الشبكات. المبدأ الأساسي هنا هو لا تثق بأحد أبداً، وتحقق دائماً (Never Trust, Always Verify). بغض النظر عما إذا كان المستخدم داخل الشبكة الداخلية للشركة أو خارجها، يجب التحقق من هويته، وصلاحياته، وسلامة جهازه في كل عملية وصول.')">
                     <div class="card-icon">🛡️</div>
                     <h3>نموذج الثقة المعدومة (Zero Trust)</h3>
                     <p>مبدأ أمني صارم ينص على عدم الوثوق بأي كيان داخلي أو خارجي إلا بعد التحقق الكامل من الهوية والصلاحيات في كل طلب وصول.</p>
                 </div>
-                <div class="card">
+                <div class="card" onclick="openDetailModal('Patch Management', 'إدارة التصحيحات والتحديثات الأمنية (Patch Management) هي عملية رصد، اختبار، وتثبيت التحديثات البرمجية التي تطلقها الشركات المصنعة لسد الثغرات المكتشفة حديثاً. يعتبر التأخير في تطبيق هذه التصحيحات أحد أبرز الأسباب التي تسهل عمل المخترقين لاختراق الأنظمة.')">
                     <div class="card-icon">🔄</div>
                     <h3>إدارة التصحيحات (Patch Management)</h3>
                     <p>التحديث المستمر لأنظمة التشغيل والبرمجيات لسد الثغرات المكتشفة حديثاً فور إطلاق الشركات المصنعة للتحديثات الأمنية.</p>
                 </div>
-                <div class="card">
+                <div class="card" onclick="openDetailModal('SOC Centers', 'مراكز العمليات الأمنية (SOC - Security Operations Center) هي العقل المدبر لحماية المؤسسات الكبرى. تتكون من فرق متخصصة من المحللين والخبراء الذين يعملون على مدار الساعة (24/7) باستخدام أنظمة الذكاء الاصطناعي وتحليل السجلات لرصد أي نشاط مشبوه والاستجابة الفورية للهجمات قبل حدوث أي ضرر كارثي.')">
                     <div class="card-icon">📊</div>
                     <h3>مراكز العمليات الأمنية (SOC)</h3>
                     <p>مراقبة مستمرة على مدار الساعة للأنظمة والشبكات ورصد الأنشطة المريبة والاستجابة السريعة للحوادث قبل تفاقمها.</p>
@@ -464,6 +493,15 @@
         <a class="team-credit-link" onclick="openTeamModal()">أعضاء الفريق المعدون للمشروع (انقر لعرض الأسماء)</a>
     </footer>
 
+    <!-- نافذة عرض الشرح التفصيلي للبطاقات -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <h3 id="detailTitle">عنوان الشرح</h3>
+            <p id="detailText" style="line-height: 2; font-size: 17px; color: #e2e8f0;"></p>
+            <button class="close-modal" onclick="closeDetailModal()">إغلاق النافذة</button>
+        </div>
+    </div>
+
     <!-- نافذة أسماء الأعضاء المنبثقة -->
     <div id="teamModal" class="modal">
         <div class="modal-content">
@@ -478,16 +516,30 @@
     </div>
 
     <script>
+        function openDetailModal(title, text) {
+            document.getElementById('detailTitle').innerText = title;
+            document.getElementById('detailText').innerText = text;
+            document.getElementById('detailModal').style.display = 'flex';
+        }
+        function closeDetailModal() {
+            document.getElementById('detailModal').style.display = 'none';
+        }
+
         function openTeamModal() {
             document.getElementById('teamModal').style.display = 'flex';
         }
         function closeTeamModal() {
             document.getElementById('teamModal').style.display = 'none';
         }
+
         window.onclick = function(event) {
-            var modal = document.getElementById('teamModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
+            var detailModal = document.getElementById('detailModal');
+            var teamModal = document.getElementById('teamModal');
+            if (event.target == detailModal) {
+                detailModal.style.display = 'none';
+            }
+            if (event.target == teamModal) {
+                teamModal.style.display = 'none';
             }
         }
     </script>
